@@ -1,7 +1,7 @@
-import { NativeModules } from 'react-native';
-const { ContactsModule } = NativeModules;
+import {NativeModules} from 'react-native';
+const {ContactsModule} = NativeModules;
 
-
-export function createContact() {
-    ContactsModule.createContact("Pepito", "58937219281")
+export function createContact(contact) {
+  if (!contact.name || !contact.phoneNumber) return;
+  ContactsModule.createContact(contact.name, contact.phoneNumber);
 }
