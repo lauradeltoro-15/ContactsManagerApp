@@ -16,7 +16,7 @@ export const CreateContactForm = () => {
     if (!name || !phoneNumber) {
       return;
     }
-    createContact({name, phoneNumber});
+    createContact(name, phoneNumber.toString());
   };
 
   return (
@@ -24,7 +24,7 @@ export const CreateContactForm = () => {
       <TextInput placeholder="Name" onChangeText={setName} value={name} />
       <TextInput
         placeholder="Phone Number"
-        onChange={setPhoneNumber}
+        onChangeText={setPhoneNumber}
         value={phoneNumber}
         maxLength={9}
         keyboardType={'numeric'}
