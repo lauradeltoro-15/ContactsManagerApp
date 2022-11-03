@@ -17,6 +17,8 @@ export const CreateContactForm = () => {
       return;
     }
     createContact(name, phoneNumber.toString());
+    setName('');
+    setPhoneNumber(null);
   };
 
   return (
